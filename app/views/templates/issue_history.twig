@@ -10,7 +10,9 @@
 <ol>
   {% for history in historys %}
   <li>
-    {{ history.title }}
+    {{ history.title }} <br>
+    Checkout : {{ history.checkout_time }} <br>
+    Checkin  : {{ history.checkin_time }} <br><br>
   </li>
   {% endfor %}
 </ol>

@@ -13,8 +13,18 @@ class User_issue {
         $bookid = $_POST["bookid"];
         $booknumber = $_POST["booknumber"];
 
-        \Model\User_book::issue_book($bookid,$booknumber);
-        $call = new \Controller\Allbooks();
-        $call->get();
+        If($booknumber > 0 ){
+            \Model\User_book::issue_book($bookid,$booknumber);
+            $call = new \Controller\Allbooks();
+            $call->get();
+        }
+        else{
+            echo "The Requested Book Is Out Of Stock.Please choose any other book";
+            echo \View\Loader::make()->render("templates/allbooks.twig", array(
+                "books" => \Model\Books::get_all_books(),
+            ));
+        }
+
+        
     }
 }
