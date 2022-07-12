@@ -8,7 +8,7 @@ class Issue_history {
 
     public function get() {
         echo \View\Loader::make()->render("templates/issue_history.twig", array(
-            "historys" => \Model\Post::get_all_prevs($_SESSION['username']),
+            "historys" => \Model\Post::get_all_prevs($_SESSION['username']),    
         ));
     }
 
@@ -17,7 +17,7 @@ class Issue_history {
             "historys" => \Model\Post::get_all_prevs($_SESSION['username']),
         ));
     }
-
+    
 }
 
 ?>

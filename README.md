@@ -1,6 +1,6 @@
-# mvc-lecture
+# Library_Management_System
 
-> Basic application with MVC architecture
+> Application to help manage all users, admins and issue/return requests along with the fines administered for a library
 
 ## Setup
 

@@ -3,7 +3,6 @@
 namespace Controller;
 
 //Both codes below are same. M2 is syntactically compact.
-
 // M1 : 
 // if (!isset($_SESSION)) {
 //     session_start();
