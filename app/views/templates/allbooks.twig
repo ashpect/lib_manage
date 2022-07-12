@@ -1,0 +1,24 @@
+{% extends "templates/nav.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+<h1>Hello, {{session.username}}</h1>
+
+<h2> All the books are :  </h2>
+<ol>
+  {% for book in books %}
+  <li>
+    Title : {{ book.title }} <br>
+    Book Id : {{ book.bookid }} <br>
+    Number of books remaining : {{ book.numberofbooks }} <br>
+    <form action="/user_issue" method="POST">
+    <input type="text" name="bookid" value= '{{ book.bookid }}' style="display:none;">
+    <input type="text" name="booknumber" value= '{{ book.numberofbooks }}' style="display:none;">
+    <input type="submit" value="Issue Book">
+    </form>
+    <br><br>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

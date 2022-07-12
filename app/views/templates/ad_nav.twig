@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include("templates/head.twig") %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+
+<header>  
+<nav>  
+  <ul>  
+    <li><form action="/ad_home" method="GET">
+        <input type="submit" value="Home">
+      </form>
+    </li>  
+    <li><form action="/ad_viewreq" method="GET">
+        <input type="submit" value="Approve Requests">
+      </form>
+    </li>
+    <li><form action="/view_addbook" method="GET">
+        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
+        <input type="submit" value="Add Books">
+      </form>
+    <li><form action="/logout" method="GET">
+        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
+        <input type="submit" value="Logout">
+      </form>
+    </li>
+  </ul>  
+</nav>  
+</header>
+
+
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+</html>
+  

@@ -1,0 +1,33 @@
+{% extends "templates/ad_nav.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+
+<h1>Hello, Welcome {{session.username_ad}}</h1>
+
+<h3>Add Book : </h3>
+<form action="/add_book" method="POST">
+  <p><textarea name="title" placeholder="title"></textarea></p>
+  <p><textarea name="author" placeholder="author"></textarea></p>
+  <p><input type="number" name="numberofbooks" placeholder="numberofbooks"></p>
+  <p><input type="submit" value = "Add Book" /></p>
+</form>
+
+<h2> All the books are :  </h2>
+<ol>
+  {% for book in books %}
+  <li>
+    Title : {{ book.title }} <br>
+    Author : {{ book.author }} <br>
+    Number of books : {{ book.numberofbooks }} <br>
+    <form action="/delete_book" method="POST">
+    <input type="text" name="id" value= '{{ book.bookid }}' style="display:none;">
+    <input type="submit" value="Delete Book">
+    </form>
+  </li>
+  <br>
+  {% endfor %}
+</ol>
+
+{% endblock %}

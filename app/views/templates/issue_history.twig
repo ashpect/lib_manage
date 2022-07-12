@@ -1,0 +1,18 @@
+{% extends "templates/nav.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+
+<h1>Hello, {{session.username}}</h1>
+
+<h2> Your Issue History Is : </h2>
+<ol>
+  {% for history in historys %}
+  <li>
+    {{ history.title }}
+  </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

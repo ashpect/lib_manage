@@ -1,0 +1,44 @@
+{% extends "templates/nav.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+
+<h1 class = "heading" >Hello, {{session.username}}</h1>
+
+<h3> Currently Issued Books </h3>
+<ol>
+  {% for post in posts %}
+  <li>
+    {{ post.title }}<br>
+    <form action="/user_return" method="POST">
+    <input type="text" name="id" value= '{{ post.id }}' style="display:none;">
+    <input type="submit" value="Return Book">
+    </form>
+    
+    <a href="/post/"></a>
+  </li>
+  {% endfor %}
+</ol>
+
+<h2> Books pending for approval </h2>
+
+<h3> Check-in </h3>
+<ol>
+  {% for checkin in checkins %}
+  <li>
+    {{ checkin.title }}
+  </li>
+  {% endfor %}
+</ol>
+
+<h3> Check-out </h3>
+<ol>
+  {% for checkout in checkouts %}
+  <li>
+    {{ checkout.title }}
+  </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

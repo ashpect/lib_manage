@@ -1,0 +1,44 @@
+{% extends "templates/ad_nav.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+
+<h1>Hello, Welcome {{session.username_ad}}</h1>
+
+<h3>Checkout Requests</h3>
+{% for book in checkoutbooks %}
+  <li>
+    Title : {{ book.title }} <br>
+    Requester : {{ book.user_id }} <br>
+    {{book.id}}<br>
+    <form action="/approve_issue" method="POST">
+    <input type="text" name="id" value= '{{ book.id}}' style="display:none;">
+    <input type="submit" value="Approve">
+    </form>
+    <form action="/deny_issue" method="POST">
+    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+    <input type="submit" value="Deny">
+    </form>
+    <br><br>
+  </li>
+{% endfor %}
+
+<h3>Checkin Requests</h3>
+{% for book in checkinbooks %}
+  <li>
+    Title : {{ book.title }} <br>
+    Requester : {{ book.user_id }} <br>
+    <form action="/approve_return" method="POST">
+    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+    <input type="submit" value="Approve">
+    </form>
+    <form action="/deny_return" method="POST">
+    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+    <input type="submit" value="Deny">
+    </form>
+    <br><br>
+  </li>
+{% endfor %}
+
+{% endblock %}

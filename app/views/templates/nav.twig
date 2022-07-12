@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include("templates/head.twig") %}
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Sign in</title>
+  </head>
+
+
+<header>  
+<nav>  
+  <ul>  
+    <li><form action="/" method="GET">
+        <input type="submit" value="Home">
+      </form>
+    </li>  
+    <li><form action="/allbooks" method="GET">
+        <input type="submit" value="Browse all Books">
+      </form>
+    </li>
+    <li><form action="/issuehistory" method="GET">
+        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
+        <input type="submit" value="Issue history">
+      </form>
+    <li><form action="/logout" method="GET">
+        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
+        <input type="submit" value="logout">
+      </form>
+    </li>
+  </ul>  
+</nav>  
+</header>
+
+
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+</html>
+  

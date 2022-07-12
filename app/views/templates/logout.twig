@@ -1,0 +1,14 @@
+{% extends "templates/base.twig" %}
+
+{% block title %}My website home{% endblock %}
+
+{% block body %}
+
+<h1>You have successfully logged out.</h1>
+
+<form action="/login" method="GET">
+  <input type="loginbtn" name="loginbtn" value= 'Random' style="display:none;">
+  <input type="submit" value="login">
+</form>
+
+{% endblock %}
