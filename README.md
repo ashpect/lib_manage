@@ -18,15 +18,17 @@
 
 3.Clients can 
 
-    1.view the list of books.
+    1.view all books and issue a checkout request.
 
-    2.request admin to check-in/check-out books.
+    2.view the list of issued books as well as the pending checkin/checkout requests.
+
+    3.request admin to check-in books.
 
 4.Books can have
 
     1.multiple copies
     
-    2.mutiple users can take the book untill exhausted.
+    2.mutiple users can request to issue the book untill copies are exhausted.
 
 
 
