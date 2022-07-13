@@ -20,4 +20,9 @@ class Verify {
         return $rows;
     }
 
+    public static function signup($username,$password) {
+        $db = \DB::get_instance();
+        $stmt = $db->prepare('INSERT into users(username,password) values(?,?)');
+        $stmt->execute([$username , $password]);
+    }
 }

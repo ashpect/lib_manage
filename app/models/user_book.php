@@ -2,11 +2,6 @@
 
 namespace Model;
 
-// Functions to be written :
-// 1.issue function
-// 2.return function
-
-
 class User_book {
 
     public static function return_book($checkinid) {

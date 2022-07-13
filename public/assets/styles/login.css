@@ -1,151 +1,97 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Lato:wght@300;400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-body {
-    align-items: right; 
-    background-color: rgb(247, 247, 247);  
+.hello {
+  font-family: "Roboto", sans-serif;
 }
 
-.container {
-  margin-top: 20vh;
-  width: 100vw;
-  height: 20vw;
-  display: flex;
-  /* flex-direction: row; */
-  align-items: flex-start;
-  padding-left: 5vw;
+.login-page {
+  width: 360px;
+  padding-top: 2%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 8%;
+  margin: auto;
 }
-
-.containerin1 {
-  display: flex;
-  flex-direction: column;
-}
-
-.linemaidalo{
-  display: flex;
-  flex-direction: row;
-  gap: 4vw;
-  padding-top: 5vw;
-  padding-left: 1vw;
-  font-size: 2vw;
-  font-family: 'Square Peg', cursive;
-}
-
-.linemaidalo a{
-  text-decoration: none;
-  color: black;
-  animation: 2s anim-lineUp ease-out;
-}
-
-.linemaidalo a:hover{
-  background-color: #ddd;
-  color: black;
-}
-
-.main-picture {
-  height: 20vw;
-  width: 40vw;
-  border-radius: 3vw;
-  margin-right: 5vw;
-}
-
-.main-picture > img {
-  width: 40vw;
-  border-radius: 3vw;
-}
-
-.maintext {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 1em;
-}
-
-.helloo {
-  font-family: "Fira Mono";
-  color: grey;
-  font-size: 2vw;
-}
-
-.name {
-  font-family: "Lato";
-  color: black;
-  font-weight: 400;
-  font-size: 5vw;
-}
-
-.devlabs {
-  font-family: "Lato";
-  font-weight: 300;
-  color: black;
-  font-size: 4vw;
-}
-@keyframes anim-lineUp {
-  0% {
-    opacity: 0;
-    transform: translateY(80%);
-  }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-@media only screen and (max-width: 1000px){
-  .container{
-    flex-direction: column;
-    padding-bottom: 5vw;
-    align-items: center;
-    padding-left: 1vw;
-  }
-  .main-picture {
-    height: 20vw;
-    width: 40vw;
-    border-radius: 3px;
-    margin-right: 5vw;
-    padding-bottom: 19vh;
-  }
-  .helloo{
-    font-size: 2.6vh;
-  }
-  .name{
-    font-size: 5vh;
-  }
-  .devlabs{
-    font-size: 4vh;
-  }
-  .linemaidalo{
-    font-size: 2vh;
-  }
-}
-
-.about {
-  display: inline-block;
+.form {
   position: relative;
-  color: #0087ca;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
-.aboutme:after {
-  content: '';
-  position: absolute;
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
   width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-
-.aboutme:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none; /* Removes the underline below create an accont*/
+}
+.container {
+  position: relative;
+  /* z-index: 1; Basically keeps it at top if anything else is written*/
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; 
+  font-family: "Roboto", sans-serif;
 }

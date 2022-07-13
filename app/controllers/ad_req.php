@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-session_start();
+isset($_SESSION) ? '':session_start();
 
 class ad_viewreq {
 

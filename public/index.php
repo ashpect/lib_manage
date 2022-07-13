@@ -14,6 +14,7 @@ Toro::serve(array(
     "/issuehistory" => "\Controller\Issue_history",
     "/allbooks" => "\Controller\Allbooks",
     "/user_issue" => "\Controller\User_issue",
+    "/signup" => "\Controller\sign_up",
 
     "/ad_home" => "\Controller\ad_Home",
     "/ad_viewreq" => "\Controller\ad_viewreq",

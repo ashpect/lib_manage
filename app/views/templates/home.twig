@@ -2,43 +2,96 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+}
+  </style>
+  <link rel="stylesheet" href="/assets/styles/home.css">
+{% endblock %}
+
+
 {% block body %}
+<div class="mainn">
 
-<h1 class = "heading" >Hello, {{session.username}}</h1>
+<div class = "heading"><h1 class = "heading" >Hello, {{session.username}}</h1></div>
 
-<h3> Currently Issued Books </h3>
-<ol>
+<h2> Cuurently Issued Books </h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Check-out time</th>
+    <th>Check-in Request</th>
+  </tr>
+
   {% for post in posts %}
-  <li>
-    {{ post.title }}<br>
-    <form action="/user_return" method="POST">
-    <input type="text" name="id" value= '{{ post.id }}' style="display:none;">
-    <input type="submit" value="Return Book">
-    </form>
-    
-    <a href="/post/"></a>
-  </li>
+  <tr>
+    <td>{{ post.title }}</td>
+    <td>{{ post.author }}</td>
+    <td>{{ post.publisher }}</td>
+    <td> {{ post.checkout_time }}</td>
+    <td>
+      <form action="/user_return" method="POST">
+        <input type="text" name="id" value= '{{ post.id }}' style="display:none;">
+        <input type="submit" value="Return Book">
+      </form>
+    </td>
+  <tr>
   {% endfor %}
-</ol>
+</table>
 
 <h2> Books pending for approval </h2>
 
 <h3> Check-in </h3>
-<ol>
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Check-out time</th>
+    <th>Check-in time</th>
+  </tr>
+
   {% for checkin in checkins %}
-  <li>
-    {{ checkin.title }}
-  </li>
+  <tr>
+    <td>{{ checkin.title }}</td>
+    <td>{{ checkin.author }}</td>
+    <td>{{ checkin.publisher }}</td>
+    <td> {{ checkin.checkout_time }}</td>
+    <td> {{ checkin.checkin_time }}</td>
+  <tr>
   {% endfor %}
-</ol>
+</table>
 
 <h3> Check-out </h3>
-<ol>
-  {% for checkout in checkouts %}
-  <li>
-    {{ checkout.title }}
-  </li>
-  {% endfor %}
-</ol>
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Status</th>
+  </tr>
 
+  {% for checkout in checkouts %}
+  <tr>
+    <td>{{ checkout.title }}</td>
+    <td>{{ checkout.author }}</td>
+    <td>{{ checkout.publisher }}</td>
+    <td> Pending </td>
+  <tr>
+  {% endfor %}
+</table>
+
+<div class="mainn">
 {% endblock %}

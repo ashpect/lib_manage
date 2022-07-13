@@ -2,8 +2,7 @@
 
 namespace Controller;
 
-// Initialize the session.
-session_start();
+isset($_SESSION) ? '':session_start();
 
 class Logout {
     public function get(){

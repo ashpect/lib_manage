@@ -2,9 +2,11 @@
 
 namespace Model;
 
-// Functions to be written :
-// 1.approve_issue function
-// 2.approve_return function
+// Functions :
+// 1.checkout_req function
+// 2.checkin_req function
+// 3.deletebook function
+// 4.daddbookfunction
 
 
 class  admin_func {

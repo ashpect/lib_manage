@@ -2,19 +2,20 @@
 
 namespace Controller;
 
-session_start();
+isset($_SESSION) ? '':session_start();
 
 class Login {
 
     public function get() {
-        echo \View\Loader::make()->render("templates/login.twig");
+        echo \View\Loader::make()->render("./templates/login.twig");
     }
 
     public function post() {
         //Setting global session variables
         $username = $_POST["username"];
         $password = $_POST["password"];
-
+        $password = hash("sha256",$password);
+        
         //Flag checks for username and password FOR THE USER in db
         $flag = \Model\Verify::user_verify($username,$password);
         if($flag == null)

@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-session_start();
+isset($_SESSION) ? '':session_start();
 
 //Class to handle get requests for accessing ADD/DELETe BOOKS PAGE by ADMIN.
 class s_addbook {

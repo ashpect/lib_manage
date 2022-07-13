@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-session_start();
+isset($_SESSION) ? '':session_start();
 
 class User_issue {
     public function get() {
