@@ -2,9 +2,27 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+}
+  </style>
+  <link rel="stylesheet" href="/assets/styles/home.css">
+{% endblock %}
+
+
+
 {% block body %}
-
-<h1>Hello, Welcome {{session.username_ad}}</h1>
-
-
+<div class="mainn">
+<div class = "heading" ><h1 class = "heading" >Hello, {{session.username_ad}} !!</h1></div>
+<div style="padding-left:31em;padding-bottom:1em">Find your Admin dashboard here.. :)</div>
+</div>
 {% endblock %}

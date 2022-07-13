@@ -4,16 +4,7 @@
 
 {% block css %}
   <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
-}
+
   </style>
   <link rel="stylesheet" href="/assets/styles/home.css">
 {% endblock %}
@@ -41,7 +32,8 @@
     <td>{{ book.numberofbooks }}</td>
     <td>
       <form action="/user_issue" method="POST">
-        <input type="text" name="id" value= '{{ book.bookid }}' style="display:none;">
+        <input type="text" name="bookid" value= '{{ book.bookid }}' style="display:none;">
+         <input type="text" name="booknumber" value= '{{ book.numberofbooks }}' style="display:none;">
         <input type="submit" value="Issue Book">
       </form>
     </td>

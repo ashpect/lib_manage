@@ -5,7 +5,7 @@ namespace Controller;
 isset($_SESSION) ? '':session_start();
 
 //Class to handle get requests for accessing ADD/DELETe BOOKS PAGE by ADMIN.
-class s_addbook {
+class view_addbook {
 
     public function get() {
         //Checking for valid ADMIN session.
@@ -26,7 +26,7 @@ class s_addbook {
 }
 
 //Class to handle get/post requests for ADDING BOOKS in db.
-class add_book extends s_addbook{
+class add_book extends view_addbook{
     
     public function get() {
         parent::get();
@@ -55,7 +55,7 @@ class add_book extends s_addbook{
 }
 
 //Class to handle get/post requests for DELETING BOOKS in db.
-class delete_book extends s_addbook{
+class delete_book extends view_addbook{
 
     public function get() {
         parent::get();

@@ -22,7 +22,7 @@ Toro::serve(array(
     "/deny_issue" => "\Controller\deny_issue",
     "/approve_return" => "\Controller\approve_return",
     "/deny_return" => "\Controller\deny_return",
-    "/view_addbook" => "\Controller\s_addbook",
+    "/view_addbook" => "\Controller\\view_addbook",
     "/add_book" => "\Controller\add_book",
     "/delete_book" => "\Controller\delete_book"
 ));

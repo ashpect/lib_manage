@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    {% include("templates/head.twig") %}
-    <title>{% block title %}{% endblock %}</title>
+    <title>
+    {% block title %}{% endblock %}
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/styles/ad_nav.css">
+    {% block css %}{% endblock %}
+    <title>Sign in</title>
   </head>
 
 
 <header>  
 <nav>  
-  <ul>  
-    <li><form action="/ad_home" method="GET">
-        <input type="submit" value="Home">
-      </form>
-    </li>  
-    <li><form action="/ad_viewreq" method="GET">
-        <input type="submit" value="Approve Requests">
-      </form>
-    </li>
-    <li><form action="/view_addbook" method="GET">
-        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
-        <input type="submit" value="Add Books">
-      </form>
-    <li><form action="/logout" method="GET">
-        <input type="logoutbtn" name="logoutbtn" value= 'Random' style="display:none;">
-        <input type="submit" value="Logout">
-      </form>
-    </li>
-  </ul>  
+  <nav class="navMenu">
+    <a href="../ad_home">Home</a>
+    <a href="../ad_viewreq">Approve Requests</a>
+    <a href="../view_addbook">Add Books</a>
+    <a href="../logout">Logout</a>
+    <div class="dot"></div>
+  </nav>
 </nav>  
 </header>
-
 
   <body>
     {% block body %}{% endblock %}
   </body>
+
 </html>
   

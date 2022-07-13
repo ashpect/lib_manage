@@ -3,8 +3,6 @@
 .hello {
   font-family: 'Cormorant SC', serif;
   font-weight: 600;
-  color: rgb(45,35,39);
-  padding-top: 11em;
 }
 
 .login-page {
@@ -40,7 +38,6 @@
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  /* background: rgb(225,111,89); */
   background: rgb(98,70,107);
   width: 100%;
   border: 0;
@@ -51,7 +48,6 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  /* background: rgb(98,70,107); */
   background: rgb(69,54,75);
 }
 .form .message {
@@ -60,7 +56,7 @@
   font-size: 12px;
 }
 .form .message a {
-  color: rgb(98,70,107);
+  color: #4CAF50;
   text-decoration: none; /* Removes the underline below create an accont*/
 }
 .container {
@@ -95,8 +91,4 @@
 }
 .container .info span .fa {
   color: #EF3B3A;
-}
-body {
-  background: rgb(224,225,221); 
-  font-family: "Roboto", sans-serif;
 }

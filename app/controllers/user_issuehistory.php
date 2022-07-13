@@ -13,4 +13,3 @@ class Issue_history {
     }
 }
 
-?>

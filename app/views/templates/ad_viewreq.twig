@@ -2,43 +2,96 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+}
+  </style>
+  <link rel="stylesheet" href="/assets/styles/home.css">
+{% endblock %}
+
+
+
 {% block body %}
+<div class="mainn">
 
-<h1>Hello, Welcome {{session.username_ad}}</h1>
+<div style="padding-left:5em" ><h1 class = "heading" >Want to feel powerful..??</h1></div>
+<div style="padding-left:29em;padding-bottom:1em">Approve/Deny Check-in/Check-out here.. >|< </div>
 
-<h3>Checkout Requests</h3>
-{% for book in checkoutbooks %}
-  <li>
-    Title : {{ book.title }} <br>
-    Requester : {{ book.user_id }} <br>
-    {{book.id}}<br>
-    <form action="/approve_issue" method="POST">
-    <input type="text" name="id" value= '{{ book.id}}' style="display:none;">
-    <input type="submit" value="Approve">
-    </form>
-    <form action="/deny_issue" method="POST">
-    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
-    <input type="submit" value="Deny">
-    </form>
-    <br><br>
-  </li>
-{% endfor %}
+<h2 style="padding: 2em 0em" > Checkin/Checkout Requests </h2>
+--
+<h3> Check-Out Requests </h3>
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Copies Remaining</th>
+    <th>Requester</th>
+    <th>Approve Request</th>
+    <th>Deny Request</th>
+  </tr>
 
-<h3>Checkin Requests</h3>
-{% for book in checkinbooks %}
-  <li>
-    Title : {{ book.title }} <br>
-    Requester : {{ book.user_id }} <br>
-    <form action="/approve_return" method="POST">
-    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
-    <input type="submit" value="Approve">
-    </form>
-    <form action="/deny_return" method="POST">
-    <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
-    <input type="submit" value="Deny">
-    </form>
-    <br><br>
-  </li>
-{% endfor %}
+  {% for book in checkoutbooks %}
+  <tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.numberofbooks }}</td>
+    <td>{{ book.user_id }}</td>
+    <td>
+      <form action="/approve_issue" method="POST">
+        <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+        <input type="submit" value="Approve">
+      </form>
+    </td>
+    <td>
+      <form action="/deny_issue" method="POST">
+        <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+        <input type="submit" value="Deny">
+      </form>
+    </td>
+  <tr>
+  {% endfor %}
+</table>
+--
+<h3> Check-in Requests </h3>
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Check-out Time</th>
+    <th>Requester</th>
+    <th>Approve Request</th>
+    <th>Deny Request</th>
+  </tr>
 
+  {% for book in checkinbooks %}
+  <tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.checkout_time }}</td>
+    <td>{{ book.user_id }}</td>
+    <td>
+      <form action="/approve_return" method="POST">
+        <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+        <input type="submit" value="Approve">
+      </form>
+    </td>
+    <td>
+      <form action="/deny_return" method="POST">
+        <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+        <input type="submit" value="Deny">
+      </form>
+    </td>
+  <tr>
+  {% endfor %}
+</table>
+</div>
 {% endblock %}

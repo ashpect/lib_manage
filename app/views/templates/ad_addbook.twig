@@ -2,32 +2,69 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+}
+  </style>
+  <link rel="stylesheet" href="/assets/styles/home.css">
+  <link rel="stylesheet" href="/assets/styles/ad_addbook.css" /> 
+{% endblock %}
+
+
+
 {% block body %}
+<div class="mainn">
 
-<h1>Hello, Welcome {{session.username_ad}}</h1>
+<div style="padding-left:3em" ><h1 class = "heading">Increase Quality Books , {{session.username_ad}}.</h1></div>
+<div style="padding-left:35em;padding-bottom:1em">Add/Delete Books Here.</div>
 
-<h3>Add Book : </h3>
-<form action="/add_book" method="POST">
-  <p><textarea name="title" placeholder="title"></textarea></p>
-  <p><textarea name="author" placeholder="author"></textarea></p>
-  <p><input type="number" name="numberofbooks" placeholder="numberofbooks"></p>
-  <p><input type="submit" value = "Add Book" /></p>
-</form>
-
-<h2> All the books are :  </h2>
-<ol>
-  {% for book in books %}
-  <li>
-    Title : {{ book.title }} <br>
-    Author : {{ book.author }} <br>
-    Number of books : {{ book.numberofbooks }} <br>
-    <form action="/delete_book" method="POST">
-    <input type="text" name="id" value= '{{ book.bookid }}' style="display:none;">
-    <input type="submit" value="Delete Book">
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" action="/add_book" method="POST">
+      <input type="text" name="title" placeholder="Title"/>
+      <input type="password" name="author" placeholder="Author"/>
+      <input type="password" name="publisher" placeholder="Publisher"/>
+      <input type="password" name="numberofbooks" placeholder="Number of copies"/>
+      <button class="btn btn-secondary" >Add Book</button>
     </form>
-  </li>
-  <br>
-  {% endfor %}
-</ol>
+  </div>                          
+</div>
 
+<h2> All Books </h2>
+--
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Number of copies</th>
+    <th>Remove Book</th>
+  </tr>
+
+  {% for book in books %}
+  <tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.publisher }}</td>
+    <td>{{ book.numberofbooks }}</td>
+    <td>
+      <form action="/delete_book" method="POST">
+        <input type="text" name="id" value= '{{ book.bookid }}' style="display:none;">
+        <input type="submit" value="Delete">
+      </form>
+    </td>
+  <tr>
+  {% endfor %}
+</table>
+
+</div>
 {% endblock %}

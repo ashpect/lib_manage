@@ -8,11 +8,8 @@
 }
 .mainn{
     padding: 10em;
+    padding-top: 15em;
 }
 .logoutbtn{
     align-content: center;
 }
-body {
-    background: rgb(224,225,221); 
-    font-family: "Roboto", sans-serif;
-  }
