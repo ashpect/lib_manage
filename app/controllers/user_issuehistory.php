@@ -4,7 +4,7 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
-class Issue_history {
+class IssueHistory {
 
     public function get() {
         echo \View\Loader::make()->render("templates/issue_history.twig", array(

@@ -35,7 +35,7 @@ class Login {
                 $_SESSION["password_ad"] = $password;
 
                 //Get method for Admin Homepage
-                $call = new \Controller\ad_Home();
+                $call = new \Controller\AdHome();
                 $call->get();
             }
         }

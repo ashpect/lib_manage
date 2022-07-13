@@ -4,7 +4,7 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
-class sign_up {
+class SignUp {
 
     public function get() {
         echo \View\Loader::make()->render("templates/signup.twig");

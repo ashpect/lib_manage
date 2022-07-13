@@ -3,7 +3,7 @@
 namespace Model;
 
 
-class  admin_req {
+class  AdminReq {
 
     public static function approve_issue($id) {
         $db = \DB::get_instance();

@@ -4,14 +4,14 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
-class ad_viewreq {
+class AdViewReq {
 
     public function get() {
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             echo \View\Loader::make()->render("templates/ad_viewreq.twig", array(
-                "checkoutbooks" => \Model\admin_func::checkout_req(),
-                "checkinbooks" => \Model\admin_func::checkin_req(),
+                "checkoutbooks" => \Model\AdminFunc::checkout_req(),
+                "checkinbooks" => \Model\AdminFunc::checkin_req(),
             ));
         }
         else
@@ -22,7 +22,7 @@ class ad_viewreq {
 
 }
 
-class approve_issue extends ad_viewreq{
+class ApproveIssue extends AdViewReq{
 
     public function get() {
         parent::get();
@@ -32,8 +32,8 @@ class approve_issue extends ad_viewreq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\admin_req::approve_issue($id);
-            $call = new \Controller\Ad_viewreq();
+            \Model\AdminReq::approve_issue($id);
+            $call = new \Controller\AdViewReq();
             $call->get();
         }
         else
@@ -43,7 +43,7 @@ class approve_issue extends ad_viewreq{
     }
 }
 
-class deny_issue extends ad_viewreq{
+class DenyIssue extends AdViewReq{
 
     public function get() {
         parent::get();
@@ -53,8 +53,8 @@ class deny_issue extends ad_viewreq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\admin_req::deny_issue($id);
-            $call = new \Controller\Ad_viewreq();
+            \Model\AdminReq::deny_issue($id);
+            $call = new \Controller\AdViewReq();
             $call->get();
         }
         else
@@ -64,7 +64,7 @@ class deny_issue extends ad_viewreq{
     }
 }
 
-class approve_return extends ad_viewreq{
+class ApproveReturn extends AdViewReq{
 
     public function get() {
         parent::get();
@@ -74,8 +74,8 @@ class approve_return extends ad_viewreq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\admin_req::approve_return($id);
-            $call = new \Controller\Ad_viewreq();
+            \Model\AdminReq::approve_return($id);
+            $call = new \Controller\AdViewReq();
             $call->get();
         }
         else
@@ -85,7 +85,7 @@ class approve_return extends ad_viewreq{
     }
 }
 
-class deny_return extends ad_viewreq{
+class DenyReturn extends AdViewReq{
 
     public function get() {
         parent::get();
@@ -95,8 +95,8 @@ class deny_return extends ad_viewreq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\admin_req::deny_return($id);
-            $call = new \Controller\Ad_viewreq();
+            \Model\AdminReq::deny_return($id);
+            $call = new \Controller\AdViewReq();
             $call->get();
         }
         else

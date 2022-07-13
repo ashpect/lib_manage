@@ -4,9 +4,9 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
-class User_issue {
+class UserIssue {
     public function get() {
-        $call = new \Controller\Allbooks();
+        $call = new \Controller\AllBooks();
         $call->get();
     }
     public function post() {
@@ -14,8 +14,8 @@ class User_issue {
         $booknumber = $_POST["booknumber"];
 
         If($booknumber > 0 ){
-            \Model\User_book::issue_book($bookid,$booknumber);
-            $call = new \Controller\Allbooks();
+            \Model\UserBook::issue_book($bookid,$booknumber);
+            $call = new \Controller\AllBooks();
             $call->get();
         }
         else{

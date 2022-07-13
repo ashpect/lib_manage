@@ -35,7 +35,7 @@ class Home {
 
 }
 
-class ad_Home{
+class AdHome{
 
     public function get() {
         //Checking for valid ADMIN session.

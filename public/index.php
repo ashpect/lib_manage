@@ -8,23 +8,22 @@ Toro::serve(array(
     "/post/:number" => "\Controller\Post",
     "/login" => "\Controller\Login",
     "/register" => "RegisterController",
-    "/admin" => "\Controller\admin",
 	"/home" => "\Controller\Home",
-    "/user_return" => "\Controller\User_return",
-    "/issue_history" => "\Controller\Issue_history",
-    "/allbooks" => "\Controller\Allbooks",
-    "/user_issue" => "\Controller\User_issue",
-    "/signup" => "\Controller\sign_up",
+    "/user_return" => "\Controller\UserReturn",
+    "/issue_history" => "\Controller\IssueHistory",
+    "/allbooks" => "\Controller\AllBooks",
+    "/user_issue" => "\Controller\UserIssue",
+    "/signup" => "\Controller\SignUp",
 
-    "/ad_home" => "\Controller\ad_Home",
-    "/ad_viewreq" => "\Controller\ad_viewreq",
-    "/approve_issue" => "\Controller\approve_issue",
-    "/deny_issue" => "\Controller\deny_issue",
-    "/approve_return" => "\Controller\approve_return",
-    "/deny_return" => "\Controller\deny_return",
-    "/view_addbook" => "\Controller\\view_addbook",
-    "/add_book" => "\Controller\add_book",
-    "/delete_book" => "\Controller\delete_book"
+    "/ad_home" => "\Controller\AdHome",
+    "/ad_viewreq" => "\Controller\AdViewReq",
+    "/approve_issue" => "\Controller\ApproveIssue",
+    "/deny_issue" => "\Controller\DenyIssue",
+    "/approve_return" => "\Controller\ApproveReturn",
+    "/deny_return" => "\Controller\DenyReturn",
+    "/view_addbook" => "\Controller\\ViewAddBook",
+    "/add_book" => "\Controller\AddBook",
+    "/delete_book" => "\Controller\DeleteBook"
 ));
 
 

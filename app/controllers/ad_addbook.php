@@ -5,7 +5,7 @@ namespace Controller;
 isset($_SESSION) ? '':session_start();
 
 //Class to handle get requests for accessing ADD/DELETe BOOKS PAGE by ADMIN.
-class view_addbook {
+class ViewAddBook {
 
     public function get() {
         //Checking for valid ADMIN session.
@@ -26,7 +26,7 @@ class view_addbook {
 }
 
 //Class to handle get/post requests for ADDING BOOKS in db.
-class add_book extends view_addbook{
+class AddBook extends ViewAddBook{
     
     public function get() {
         parent::get();
@@ -40,7 +40,7 @@ class add_book extends view_addbook{
             $author = $_POST["author"];
             $numberofbooks = $_POST["numberofbooks"];
 
-            \Model\admin_func::addbook($title,$author,$numberofbooks);
+            \Model\AdminFunc::addbook($title,$author,$numberofbooks);
 
             echo \View\Loader::make()->render("templates/ad_addbook.twig", array(
                 "books" => \Model\Books::get_all_books(),
@@ -55,7 +55,7 @@ class add_book extends view_addbook{
 }
 
 //Class to handle get/post requests for DELETING BOOKS in db.
-class delete_book extends view_addbook{
+class DeleteBook extends ViewAddBook{
 
     public function get() {
         parent::get();
@@ -67,7 +67,7 @@ class delete_book extends view_addbook{
         {
             $id = $_POST["id"];
 
-            \Model\admin_func::deletebook($id);
+            \Model\AdminFunc::deletebook($id);
 
             echo \View\Loader::make()->render("templates/ad_addbook.twig", array(
                 "books" => \Model\Books::get_all_books(),

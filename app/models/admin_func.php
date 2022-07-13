@@ -9,7 +9,7 @@ namespace Model;
 // 4.daddbookfunction
 
 
-class  admin_func {
+class  AdminFunc {
 
     public static function checkout_req() {
         $db = \DB::get_instance();
