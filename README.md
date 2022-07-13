@@ -34,42 +34,22 @@
 
 ## DATABASE STRUCTURE :
 
-1. ### MAIN DATABASE : dbtest1
-Tables_in_dbtest1 are :
-    `1.admin`
+1. ### MAIN DATABASE : dblib
+Tables_in_dblib are :
+    `1.admins`
     `2.books`
     `3.checkouts`
-    `4.user`
+    `4.users`
 
 2. ### Relation between tables :
      ![This is an image](#updateimage)
 
 ## Setup
 
-1. Clone the repository and `cd` into it.
+1. Make sure you create a mysql database based on given design above and mysql services are up and running.
 
-1. Install composer using:
-    ```console
-    > curl -s https://getcomposer.org/installer | php
-    > sudo mv composer.phar /usr/local/bin/composer
-    ```
+2. Clone the repository and `cd` into it.
 
-1. Install dependencies and dump-autoload:
-    ```console
-    > composer install
-    > composer dump-autoload
-    ```
+3. Setup config.php based on sample.config.php if familier with it.
 
-1. Copy `config/sample.config.php` as `config/config.php` and edit it accordingly:
-    ```console
-    > cp config/sample.config.php config/config.php
-    # Edit the file using your mysql database credentials
-    ```
-
-1. Import schema present in `schema/schema.sql` in your database.
-
-1. Serve the public folder at any port (say 8000):
-    ```console
-	> cd public
-    > php -S localhost:8000
-    ```
+4. Otherwise,Run setup.sh with sudo privilages.
