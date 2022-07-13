@@ -2,6 +2,46 @@
 
 > Application to help manage all users, admins and issue/return requests along with the fines administered for a library
 
+## FEATURES :
+
+1.A client portal and an admin portal (including authentication and authorization (hashed salted passwords)).
+
+2.Admins can 
+
+    1.list the books available in the library.
+
+    2.update that list(add/remove books).
+
+    3.approve/deny checkin/checkout requests made by the clients.
+
+    4.impose fine on late check-in.
+
+3.Clients can 
+
+    1.view the list of books.
+
+    2.request admin to check-in/check-out books.
+
+4.Books can have
+
+    1.multiple copies
+    
+    2.mutiple users can take the book untill exhausted.
+
+
+
+## DATABASE STRUCTURE :
+
+1. ### MAIN DATABASE : dbtest1
+Tables_in_dbtest1 are :
+    `1.admin`
+    `2.books`
+    `3.checkouts`
+    `4.user`
+
+2. ### Relation between tables :
+     ![This is an image](#updateimage)
+
 ## Setup
 
 1. Clone the repository and `cd` into it.
