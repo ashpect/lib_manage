@@ -1,3 +1,14 @@
+.heading{
+    align-items: center;
+    padding-left: 11em;
+    padding-bottom: .4em;
+}
+.smolltext{
+    align-items:center;
+}
 .mainn{
     padding: 10em;
+}
+.logoutbtn{
+    align-content: center;
 }

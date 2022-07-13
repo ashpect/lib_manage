@@ -11,13 +11,6 @@ class Issue_history {
             "historys" => \Model\Post::get_all_prevs($_SESSION['username']),    
         ));
     }
-
-    public function post(){
-        echo \View\Loader::make()->render("templates/issue_history.twig", array(
-            "historys" => \Model\Post::get_all_prevs($_SESSION['username']),
-        ));
-    }
-    
 }
 
 ?>

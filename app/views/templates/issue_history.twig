@@ -2,19 +2,48 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+}
+  </style>
+  <link rel="stylesheet" href="/assets/styles/home.css">
+{% endblock %}
+
 {% block body %}
 
-<h1>Hello, {{session.username}}</h1>
+<div class="mainn">
 
-<h2> Your Issue History Is : </h2>
-<ol>
+<div style=" align-items: center;padding-left: 28em;padding-bottom: 1em;"><h1>Your previous reads...?</h1></div>
+<div style="padding-left:33em;padding-bottom:4em">Keep incresing the stack >|<</div>
+
+<table style="width:100%">
+  <tr>
+    <th>Titile</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Check-out time</th>
+    <th>Check-in time</th>
+    <th>Fine</th>
+  </tr>
+
   {% for history in historys %}
-  <li>
-    {{ history.title }} <br>
-    Checkout : {{ history.checkout_time }} <br>
-    Checkin  : {{ history.checkin_time }} <br><br>
-  </li>
+  <tr>
+    <td>{{ history.title }}</td>
+    <td>{{ history.author }}</td>
+    <td>{{ history.publisher }}</td>
+    <td> {{ history.checkout_time }}</td>
+    <td> {{ history.checkin_time }}</td>
+    <td> NULL </td>
+  <tr>
   {% endfor %}
-</ol>
-
+</table>
 {% endblock %}

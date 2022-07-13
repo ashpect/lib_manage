@@ -19,12 +19,14 @@
 {% endblock %}
 
 
+
 {% block body %}
 <div class="mainn">
 
-<div class = "heading"><h1 class = "heading" >Hello, {{session.username}}</h1></div>
+<div class = "heading" ><h1 class = "heading" >Hello, {{session.username}} !!</h1></div>
+<div style="padding-left:27em;padding-bottom:1em">Find your pending approvals and issued books here.. :)</div>
 
-<h2> Cuurently Issued Books </h2>
+<h2 style="padding: 2em 0em" > Curently Issued Books </h2>
 
 <table style="width:100%">
   <tr>
@@ -51,7 +53,7 @@
   {% endfor %}
 </table>
 
-<h2> Books pending for approval </h2>
+<h2 style="padding-top : 3em;padding-bottom : 1.5em"> Books pending for approval </h2>
 
 <h3> Check-in </h3>
 <table style="width:100%">
@@ -74,7 +76,7 @@
   {% endfor %}
 </table>
 
-<h3> Check-out </h3>
+<h3 style="padding-top:2em"> Check-out </h3>
 <table style="width:100%">
   <tr>
     <th>Titile</th>
@@ -93,5 +95,5 @@
   {% endfor %}
 </table>
 
-<div class="mainn">
+</div>
 {% endblock %}

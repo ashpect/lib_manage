@@ -2,13 +2,19 @@
 
 {% block title %}My website home{% endblock %}
 
+{% block css %}
+  <link rel="stylesheet" href="/assets/styles/home.css">
+{% endblock %}
+
 {% block body %}
 
-<h1>You have successfully logged out.</h1>
+<h1 style="padding:0em 15em;padding-top:5em">You have successfully logged out.</h1>
 
+<div style="padding:0em 45em">
 <form action="/login" method="GET">
   <input type="loginbtn" name="loginbtn" value= 'Random' style="display:none;">
   <input type="submit" value="login">
 </form>
+</div>
 
 {% endblock %}

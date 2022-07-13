@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+/*Ignore comments,were added for my future reference*/
+
 * {
   margin: 0;
   padding: 0;
@@ -13,22 +15,18 @@ body {
 }
 
 .navMenu {
-    padding-top: 2em;
+    padding-top: 5em;
   position: absolute;
-  left: 40%;
-  /* transform: translate(-50%, -50%); */
+  left: 33%;
 }
 
 .navMenu a {
   color: black;
   text-decoration: none;
   font-size: 1.1em;
-  /* text-transform: uppercase; */
   font-weight: 500;
   display: inline-block;
-  width: 80px;
-  /* -webkit-transition: all 0.2s ease-in-out; */
-  /* transition: all 0.2s ease-in-out; */
+  width: 160px;
 }
 
 .navMenu a:hover {
@@ -41,42 +39,30 @@ body {
   background: #cfe928; 
   border-radius: 50%; /*makes it a circle*/
   opacity: 0; /* by default under home, so making it opaque when not hovering*/
-  /* -webkit-transform: translateX(30px); */
-  /* transform: translateX(30px); */
-  /* -webkit-transition: all 0.2s ease-in-out; */
-  /* transition: all 0.2s ease-in-out; */
 }
 
 /* Now when hovered over first child, changes to dot are as follows */
 .navMenu a:nth-child(1):hover ~ .dot {
-  /* -webkit-transform: translateX(30px); */
-  transform: translateX(30px);
-  /* -webkit-transition: all 0.2s ease-in-out; */
+  transform: translateX(27px); /*distance to taravel easing in*?
   transition: all 0.2s ease-in-out; /* Transition of the dot */
   opacity: 1;
 }
 
 .navMenu a:nth-child(2):hover ~ .dot {
-  /* -webkit-transform: translateX(110px); */
-  transform: translateX(110px);
-  /* -webkit-transition: all 0.2s ease-in-out; */
-  transition: all 0.2s ease-in-out;
+  transform: translateX(200px);
+  transition: all 0.25s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:nth-child(3):hover ~ .dot {
-  /* -webkit-transform: translateX(200px); */
-  transform: translateX(200px);
-  /* -webkit-transition: all 0.2s ease-in-out; */
-  transition: all 0.2s ease-in-out;
+  transform: translateX(380px);
+  transition: all 0.25s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:nth-child(4):hover ~ .dot {
-/*   -webkit-transform: translateX(285px); */
-  transform: translateX(285px);
-/*   -webkit-transition: all 0.2s ease-in-out; */
-/*   transition: all 0.2s ease-in-out; */
+  transform: translateX(520px);
+  transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
