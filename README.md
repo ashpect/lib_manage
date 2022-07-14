@@ -40,10 +40,21 @@ Tables_in_dblib are :
     `2.books`
     `3.checkouts`
     `4.users`
+    ![This is an image](https://cdn.discordapp.com/attachments/918561473008123954/996979057545719909/Screen_Shot_2022-07-14_at_8.48.07_AM.png)
 
 2. ### Relation between tables :
-     ![68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3931383536313437333030383132333935342f3938313337363831323033323631303333342f313635343034383835323939352e6a7067](https://user-images.githubusercontent.com/93992470/178844733-dcb45127-378c-4250-894a-ba2a7fbda81b.jpeg)
 
+1. The user_id in checkouts tableis the foreign key connected with username in users table as the primary key.
+2. The book_id in checkouts tableis the foreign key connected with bookid in books table as the primary key.The use of doing so allows for ease of storage and view since the title of books may be complicated.
+
+3. ### Working :
+
+1. When user requests for issuing the book , user_id and bookid are filled in checkouts along with the auto increment id.
+2. Then, when the admin approves the issue request and the user can finally take the book, checkout_time is updated along with checkout_admin which stores the admin who approved the book , so that you can visit it later in case of lost of books.
+3. Then when the user return the book, checkin_time is updated.
+4. Finally, checkin_admin is updated by the id of admin who approved the checkin request.
+4. If difference between checkin_time and checkout_time is greater than 7 days, the fine is calculated using the formula $2*(difference bw dates - 7days).
+    
 
 ## Setup :
 
