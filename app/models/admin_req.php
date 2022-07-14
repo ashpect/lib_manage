@@ -5,7 +5,7 @@ namespace Model;
 
 class  AdminReq {
 
-    public static function approve_issue($id) {
+    public static function approveIssue($id) {
         $db = \DB::get_instance();
         
         $stmt = $db->prepare('UPDATE checkouts set checkout_time = CURRENT_TIMESTAMP() where id = ?');
@@ -15,7 +15,7 @@ class  AdminReq {
         $stmt2->execute([$_SESSION["username_ad"],$id]);
     }
 
-    public static function approve_return($id) {
+    public static function approveReturn($id) {
         $db = \DB::get_instance();
 
         $stmt = $db->prepare('UPDATE checkouts set checkin_adminid = ? where id = ?');
@@ -25,7 +25,7 @@ class  AdminReq {
         $stmt2->execute([$id]);
     }
 
-    public static function deny_issue($id) {
+    public static function denyIssue($id) {
 
         $db = \DB::get_instance();
 
@@ -37,7 +37,7 @@ class  AdminReq {
 
     }
 
-    public static function deny_return($id) {
+    public static function denyReturn($id) {
 
         $db = \DB::get_instance();
         $stmt = $db->prepare('UPDATE checkouts set checkin_time = NULL where id = ?');

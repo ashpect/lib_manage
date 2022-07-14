@@ -44,7 +44,7 @@ Tables_in_dblib are :
 2. ### Relation between tables :
      ![This is an image](#updateimage)
 
-## Setup
+## Setup :
 
 1. Make sure you create a mysql database based on given design above and mysql services are up and running.
 

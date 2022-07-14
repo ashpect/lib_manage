@@ -20,9 +20,9 @@ class Home {
             echo \View\Loader::make()->render("templates/home.twig", array(
 
                 //Getting 3 tables in Home page representing current issues books and books pending for checkin and checkout requests.
-                "checkins" => \Model\Post::checkin_request($_SESSION['username']),
-                "checkouts" => \Model\Post::checkout_request($_SESSION['username']),
-                "posts" => \Model\Post::get_all_current($_SESSION['username']),
+                "checkins" => \Model\Post::checkinRequest($_SESSION['username']),
+                "checkouts" => \Model\Post::checkoutRequest($_SESSION['username']),
+                "posts" => \Model\Post::getAllCurrent($_SESSION['username']),
 
             ));
         }

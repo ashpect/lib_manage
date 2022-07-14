@@ -11,7 +11,7 @@ namespace Model;
 
 class  AdminFunc {
 
-    public static function checkout_req() {
+    public static function checkoutReq() {
         $db = \DB::get_instance();
         
         $stmt = $db->prepare('SELECT * from checkouts inner join books on checkouts.book_id = books.bookid where checkout_adminid is null');
@@ -20,7 +20,7 @@ class  AdminFunc {
         return $rows;
     }
 
-    public static function checkin_req() {
+    public static function checkinReq() {
         $db = \DB::get_instance();
         
         $stmt = $db->prepare('SELECT * from checkouts inner join books on checkouts.book_id = books.bookid where checkin_adminid is null and checkin_time is not null');
@@ -29,14 +29,14 @@ class  AdminFunc {
         return $rows;
     }
 
-    public static function addbook($title,$author,$numberofbooks){
+    public static function addBook($title,$author,$numberofbooks){
         $db = \DB::get_instance();
         
         $stmt = $db->prepare('INSERT into books (title,author,numberofbooks) values(?,?,?)');
         $stmt->execute([$title,$author,$numberofbooks]);
     }
 
-    public static function deletebook($id){
+    public static function deleteBook($id){
         $db = \DB::get_instance();
         
         $stmt = $db->prepare('DELETE from books where bookid = ?');

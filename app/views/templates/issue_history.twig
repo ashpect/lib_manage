@@ -1,23 +1,5 @@
 {% extends "templates/nav.twig" %}
 
-{% block title %}My website home{% endblock %}
-
-{% block css %}
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
-}
-  </style>
-  <link rel="stylesheet" href="/assets/styles/home.css">
-{% endblock %}
-
 {% block body %}
 
 <div class="mainn">
@@ -25,16 +7,19 @@
 <div style=" align-items: center;padding-left: 28em;padding-bottom: 1em;"><h1>Your previous reads...?</h1></div>
 <div style="padding-left:33em;padding-bottom:4em">Keep incresing the stack >|<</div>
 
-<table style="width:100%">
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
   <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Check-out time</th>
-    <th>Check-in time</th>
-    <th>Fine</th>
+    <th scope="col">Titile</th>
+    <th scope="col">Author</th>
+    <th scope="col">Publisher</th>
+    <th scope="col">Check-out time</th>
+    <th scope="col">Check-in time</th>
+    <th scope="col">Fine</th>
   </tr>
+  </thread>
 
+  <tbody>
   {% for history in historys %}
   <tr>
     <td>{{ history.title }}</td>
@@ -42,8 +27,9 @@
     <td>{{ history.publisher }}</td>
     <td> {{ history.checkout_time }}</td>
     <td> {{ history.checkin_time }}</td>
-    <td> NULL </td>
+    <td> $0 </td>
   <tr>
   {% endfor %}
+  </tbody>
 </table>
 {% endblock %}

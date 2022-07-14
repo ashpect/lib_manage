@@ -11,7 +11,7 @@ class UserReturn {
     }
     public function post() {
         $id = $_POST["id"];
-        \Model\UserBook::return_book($id);
+        \Model\UserBook::returnBook($id);
         $call = new \Controller\Home();
         $call->get();
     }

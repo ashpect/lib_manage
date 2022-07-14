@@ -1,31 +1,17 @@
 {% extends "templates/ad_nav.twig" %}
 
-{% block title %}My website home{% endblock %}
-
 {% block css %}
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
-}
-  </style>
-  <link rel="stylesheet" href="/assets/styles/home.css">
-  <link rel="stylesheet" href="/assets/styles/ad_addbook.css" /> 
+  <link rel="stylesheet" href="/assets/styles/login.css">
+  <link rel="stylesheet" href="/assets/styles/addbook.css">
 {% endblock %}
-
-
 
 {% block body %}
 <div class="mainn">
 
-<div style="padding-left:3em" ><h1 class = "heading">Increase Quality Books , {{session.username_ad}}.</h1></div>
-<div style="padding-left:35em;padding-bottom:1em">Add/Delete Books Here.</div>
+<div class = "flex1">
+  <div class="subflex1"><h1>Increase Quality Books , {{session.username_ad}}.</h1></div>
+  <div class="subflex2">Add/Delete Books Here.</div>
+</div>
 
 <div class="login-page">
   <div class="form">
@@ -39,17 +25,20 @@
   </div>                          
 </div>
 
-<h2> All Books </h2>
---
-<table style="width:100%">
-  <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Number of copies</th>
-    <th>Remove Book</th>
-  </tr>
+<div class="allbookheading" ><h2>Remove Book</h2></div>
 
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Titile</th>
+    <th scope="col">Author</th>
+    <th scope="col">Publisher</th>
+    <th scope="col">Number of copies</th>
+    <th scope="col">Remove Book</th>
+  </tr>
+  </thead>
+
+  <tbody>
   {% for book in books %}
   <tr>
     <td>{{ book.title }}</td>
@@ -59,11 +48,13 @@
     <td>
       <form action="/delete_book" method="POST">
         <input type="text" name="id" value= '{{ book.bookid }}' style="display:none;">
-        <input type="submit" value="Delete">
+        <button type="submit" class="btn btn-outline-danger" >Delete</button>
       </form>
     </td>
   <tr>
   {% endfor %}
+  </tbody>
+
 </table>
 
 </div>

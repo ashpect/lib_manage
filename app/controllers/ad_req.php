@@ -10,8 +10,8 @@ class AdViewReq {
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             echo \View\Loader::make()->render("templates/ad_viewreq.twig", array(
-                "checkoutbooks" => \Model\AdminFunc::checkout_req(),
-                "checkinbooks" => \Model\AdminFunc::checkin_req(),
+                "checkoutbooks" => \Model\AdminFunc::checkoutReq(),
+                "checkinbooks" => \Model\AdminFunc::checkinReq(),
             ));
         }
         else
@@ -32,7 +32,7 @@ class ApproveIssue extends AdViewReq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\AdminReq::approve_issue($id);
+            \Model\AdminReq::approveIssue($id);
             $call = new \Controller\AdViewReq();
             $call->get();
         }
@@ -53,7 +53,7 @@ class DenyIssue extends AdViewReq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\AdminReq::deny_issue($id);
+            \Model\AdminReq::denyIssue($id);
             $call = new \Controller\AdViewReq();
             $call->get();
         }
@@ -74,7 +74,7 @@ class ApproveReturn extends AdViewReq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\AdminReq::approve_return($id);
+            \Model\AdminReq::approveReturn($id);
             $call = new \Controller\AdViewReq();
             $call->get();
         }
@@ -95,7 +95,7 @@ class DenyReturn extends AdViewReq{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
             $id = $_POST["id"];
-            \Model\AdminReq::deny_return($id);
+            \Model\AdminReq::denyReturn($id);
             $call = new \Controller\AdViewReq();
             $call->get();
         }

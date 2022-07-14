@@ -1,32 +1,28 @@
 {% extends "templates/nav.twig" %}
 
-{% block title %}My website home{% endblock %}
-
-{% block css %}
-  <style>
-
-  </style>
-  <link rel="stylesheet" href="/assets/styles/home.css">
-{% endblock %}
-
 {% block body %}
 <div class="mainn">
-<div style=" align-items: center;padding-left: 25em;padding-bottom: 1em;"><h1>Looking for a read , {{session.username}} ?</h1></div>
-<div style="padding-left:30em">Thriller, History or maybe some Poetry..</div>
-<h2 style="padding: 2em 0em" > All Books </h2>
 
-<table style="width:100%">
+  <div class = "flex1">
+  <div class="subflex1"><h1>Looking for a read , {{session.username}} ?</h1></div>
+  <div class="subflex2">Thriller, History or maybe some Poetry..</div>
+  </div>
+
+<table class="table table-bordered table-hover" >
+  <thead class="thead-dark">
   <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Number of copies left</th>
-    <th> Issue </th>
+    <th scope="col" >Titile</th>
+    <th scope="col" >Author</th>
+    <th scope="col" >Publisher</th>
+    <th scope="col" >Number of copies left</th>
+    <th scope="col" > Issue </th>
   </tr>
+  </thread>
 
+  <tbody>
   {% for book in books %}
   <tr>
-    <td>{{ book.title }}</td>
+    <td scope="row" >{{ book.title }}</td>
     <td>{{ book.author }}</td>
     <td>{{ book.publisher }}</td>
     <td>{{ book.numberofbooks }}</td>
@@ -34,11 +30,13 @@
       <form action="/user_issue" method="POST">
         <input type="text" name="bookid" value= '{{ book.bookid }}' style="display:none;">
          <input type="text" name="booknumber" value= '{{ book.numberofbooks }}' style="display:none;">
-        <input type="submit" value="Issue Book">
+        <button type="submit" class="btn btn-outline-success">Issue Book</button>
       </form>
     </td>
   <tr>
   {% endfor %}
+  </tbody>
+
 </table>
 </div>
 {% endblock %}

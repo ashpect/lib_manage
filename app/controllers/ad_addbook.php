@@ -13,7 +13,7 @@ class ViewAddBook {
         {
             //Rendering Add/Delete Books Page and getting all books from db.
             echo \View\Loader::make()->render("templates/ad_addbook.twig", array(
-                "books" => \Model\Books::get_all_books(),
+                "books" => \Model\Books::getAllBooks(),
             ));
         }
         else
@@ -43,7 +43,7 @@ class AddBook extends ViewAddBook{
             \Model\AdminFunc::addbook($title,$author,$numberofbooks);
 
             echo \View\Loader::make()->render("templates/ad_addbook.twig", array(
-                "books" => \Model\Books::get_all_books(),
+                "books" => \Model\Books::getAllBooks(),
             ));
 
         }
@@ -70,7 +70,7 @@ class DeleteBook extends ViewAddBook{
             \Model\AdminFunc::deletebook($id);
 
             echo \View\Loader::make()->render("templates/ad_addbook.twig", array(
-                "books" => \Model\Books::get_all_books(),
+                "books" => \Model\Books::getAllBooks(),
             ));
         }
         else

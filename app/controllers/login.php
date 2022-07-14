@@ -17,11 +17,11 @@ class Login {
         $password = hash("sha256",$password);
         
         //Flag checks for username and password FOR THE USER in db
-        $flag = \Model\Verify::user_verify($username,$password);
+        $flag = \Model\Verify::userVerify($username,$password);
         if($flag == null)
         {
             //If the login is not by user, flag2 checks for LOGIN BY ADMIN in db.
-            $flag2 = \Model\Verify::admin_verify($username,$password);
+            $flag2 = \Model\Verify::adminVerify($username,$password);
             if($flag2 == null){
 
                 //If the login is invalid.

@@ -1,42 +1,31 @@
 {% extends "templates/nav.twig" %}
 
-{% block title %}My website home{% endblock %}
-
 {% block css %}
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
-}
-  </style>
-  <link rel="stylesheet" href="/assets/styles/home.css">
+  <link rel="stylesheet" href="/assets/styles/home.css" /> 
 {% endblock %}
-
-
 
 {% block body %}
 <div class="mainn">
 
-<div class = "heading" ><h1 class = "heading" >Hello, {{session.username}} !!</h1></div>
-<div style="padding-left:27em;padding-bottom:1em">Find your pending approvals and issued books here.. :)</div>
+  <div class = "flex1">
+  <div class="subflex1"><h1>Hello, {{session.username}} !!</h1></div>
+  <div class="subflex2">Find your pending approvals and issued books here.. :)</div>
+  </div>
 
-<h2 style="padding: 2em 0em" > Curently Issued Books </h2>
+<div class="allheading"><h2> Curently Issued Books </h2></div>
 
-<table style="width:100%">
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
   <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Check-out time</th>
-    <th>Check-in Request</th>
+    <th scope="col" >Title</th>
+    <th scope="col" >Author</th>
+    <th scope="col" >Publisher</th>
+    <th scope="col" >Check-out time</th>
+    <th scope="col" >Check-in Request</th>
   </tr>
+  </thread>
 
+  <tbody>
   {% for post in posts %}
   <tr>
     <td>{{ post.title }}</td>
@@ -46,24 +35,27 @@
     <td>
       <form action="/user_return" method="POST">
         <input type="text" name="id" value= '{{ post.id }}' style="display:none;">
-        <input type="submit" value="Return Book">
+        <button type="submit" class="btn btn-outline-danger" >Return Book</button>
       </form>
     </td>
   <tr>
   {% endfor %}
+  </tbody>
 </table>
 
-<h2 style="padding-top : 3em;padding-bottom : 1.5em"> Books pending for approval </h2>
+<div class="allheading heading3"><h2> Books pending for approval</h2></div>
 
-<h3> Check-in </h3>
-<table style="width:100%">
+<div class="subtablehead"><h3> Check-in </h3></div>
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
   <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Check-out time</th>
-    <th>Check-in time</th>
+    <th scope="col">Titile</th>
+    <th scope="col">Author</th>
+    <th scope="col">Publisher</th>
+    <th scope="col">Check-out time</th>
+    <th scope="col">Check-in time</th>
   </tr>
+  </thread>
 
   {% for checkin in checkins %}
   <tr>
@@ -76,13 +68,14 @@
   {% endfor %}
 </table>
 
-<h3 style="padding-top:2em"> Check-out </h3>
-<table style="width:100%">
+<div class="subtablehead"><h3> Check-out </h3></div>
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
   <tr>
-    <th>Titile</th>
-    <th>Author</th>
-    <th>Publisher</th>
-    <th>Status</th>
+    <th scope="col">Titile</th>
+    <th scope="col">Author</th>
+    <th scope="col">Publisher</th>
+    <th scope="col">Status</th>
   </tr>
 
   {% for checkout in checkouts %}

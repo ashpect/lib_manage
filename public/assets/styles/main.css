@@ -1,4 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&display=swap');
+
 body {
-    background-color: rgb(224,225,221);
-    font-family: 'Ubuntu', sans-serif;
-}
+    background: rgb(224,225,221); 
+    font-family: "Roboto", sans-serif;
+  }

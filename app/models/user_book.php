@@ -4,13 +4,13 @@ namespace Model;
 
 class UserBook {
 
-    public static function return_book($checkinid) {
+    public static function returnBook($checkin_id) {
         $db = \DB::get_instance();
         $stmt = $db->prepare('UPDATE checkouts set checkin_time = CURRENT_TIMESTAMP() where id = ?');
-        $stmt->execute([$checkinid]);
+        $stmt->execute([$checkin_id]);
     }
 
-    public static function issue_book($id,$number) {
+    public static function issueBook($id) {
         $db = \DB::get_instance();
 
             $stmt2 = $db->prepare('UPDATE books set numberofbooks = numberofbooks-1 where bookid = ?');

@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&display=swap');
+
+
 .hello {
   font-family: 'Cormorant SC', serif;
   font-weight: 600;
   color: rgb(45,35,39);
   padding-top: 11em;
 }
-
 .login-page {
   width: 600px;
   padding-top: 2%;
@@ -100,3 +101,5 @@ body {
   background: rgb(224,225,221); 
   font-family: "Roboto", sans-serif;
 }
+
+
