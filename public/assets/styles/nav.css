@@ -25,7 +25,7 @@ th, td {
   padding: 4em;
     background: rgb(224,225,221); 
     font-family: "Roboto", sans-serif;
-  
+
 }
 
 .flex1{
@@ -33,5 +33,12 @@ th, td {
   flex-direction: column;
   align-items: center;
   padding-bottom: 6em;
+}
+
+.mainna{
+  padding: 4em;
+  background: rgb(224,225,221); 
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 50em;
 }
 
