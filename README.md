@@ -44,16 +44,16 @@ Tables_in_dblib are :
 
 2. ### Relation between tables :
 
-1. The user_id in checkouts tableis the foreign key connected with username in users table as the primary key.
-2. The book_id in checkouts tableis the foreign key connected with bookid in books table as the primary key.The use of doing so allows for ease of storage and view since the title of books may be complicated.
+    1. The user_id in checkouts tableis the foreign key connected with username in users table as the primary key.
+    2. The book_id in checkouts tableis the foreign key connected with bookid in books table as the primary key.The use of doing so allows for ease of storage and view since the title of books may be complicated.
 
 3. ### Working :
 
-1. When user requests for issuing the book , user_id and bookid are filled in checkouts along with the auto increment id.
-2. Then, when the admin approves the issue request and the user can finally take the book, checkout_time is updated along with checkout_admin which stores the admin who approved the book , so that you can visit it later in case of lost of books.
-3. Then when the user return the book, checkin_time is updated.
-4. Finally, checkin_admin is updated by the id of admin who approved the checkin request.
-4. If difference between checkin_time and checkout_time is greater than 7 days, the fine is calculated using the formula $2*(difference bw dates - 7days).
+    1. When user requests for issuing the book , user_id and bookid are filled in checkouts along with the auto increment id.
+    2. Then, when the admin approves the issue request and the user can finally take the book, checkout_time is updated along with checkout_admin which stores the admin who approved the book , so that you can visit it later in case of lost of books.
+    3. Then when the user return the book, checkin_time is updated.
+    4. Finally, checkin_admin is updated by the id of admin who approved the checkin request.
+    5. If difference between checkin_time and checkout_time is greater than 7 days, the fine is calculated using the formula $2*(difference bw dates - 7days).
     
 
 ## Setup :
