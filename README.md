@@ -40,6 +40,7 @@ Tables_in_dblib are :
     `2.books`
     `3.checkouts`
     `4.users`
+    The specificd details like default values are set to minimalise effort and take in values when certain parameters are missing.You can set them as you like in your db.
     ![This is an image](https://cdn.discordapp.com/attachments/918561473008123954/996979057545719909/Screen_Shot_2022-07-14_at_8.48.07_AM.png)
 
 2. ### Relation between tables :
