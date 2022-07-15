@@ -25,33 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Tables and their structure for db;
 --
 
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL,
-  `caption` varchar(280) NOT NULL
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  primary key(`username`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
+CREATE TABLE `admins` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  primary key(`username`),
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
+Create TABLE `books` {
+  `bookid` bigint unsigned NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `author` varchar(50),
+  `publisher` varchar(50),
+  `numberofbooks` int,
+  primary key(`bookid`),
+}
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+create table checkouts{
+  `id` serial unique not null,
+  `user_id` varchar(50) not null,
+  `book_id` bigint unsigned not null,
+  `checkout_time` timestamp,
+  `checkout_adminid` varchar(50),
+  `checkin_time` timestamp,
+  `checkin_adminid` varchar(50),
+  primary key (`id`),
+  foreign key (`user_id`)
+  references users(`username`) on delete cascade,
+    foreign key (`book_id`)
+  references books(`bookid`) on delete cascade
+}
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
