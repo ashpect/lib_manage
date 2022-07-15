@@ -4,6 +4,7 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
+//Class to handle get requests for accessing REQUESTS APPROVAL PAGE by ADMIN.
 class AdViewReq {
 
     public function get() {
@@ -22,6 +23,7 @@ class AdViewReq {
 
 }
 
+//Class to handle post requests for approval of checkout requests.
 class ApproveIssue extends AdViewReq{
 
     public function get() {
@@ -43,6 +45,7 @@ class ApproveIssue extends AdViewReq{
     }
 }
 
+//Class to handle post requests for denial of checkout requests.
 class DenyIssue extends AdViewReq{
 
     public function get() {

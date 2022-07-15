@@ -14,7 +14,7 @@ class  AdminFunc {
     public static function checkoutReq() {
         $db = \DB::get_instance();
         
-        $stmt = $db->prepare('SELECT * from checkouts inner join books on checkouts.book_id = books.bookid where checkout_adminid is null');
+        $stmt = $db->prepare('SELECT id,title,author,numberofbooks,user_id from checkouts inner join books on checkouts.book_id = books.bookid where checkout_adminid is null');
         $stmt->execute();
         $rows = $stmt->fetchAll();
         return $rows;
@@ -23,7 +23,7 @@ class  AdminFunc {
     public static function checkinReq() {
         $db = \DB::get_instance();
         
-        $stmt = $db->prepare('SELECT * from checkouts inner join books on checkouts.book_id = books.bookid where checkin_adminid is null and checkin_time is not null');
+        $stmt = $db->prepare('SELECT id,title,author,checkout_time,user_id,bookid from checkouts inner join books on checkouts.book_id = books.bookid where checkin_adminid is null and checkin_time is not null');
         $stmt->execute();
         $rows = $stmt->fetchAll();
         return $rows;

@@ -4,7 +4,7 @@ namespace Controller;
 
 isset($_SESSION) ? '':session_start();
 
-//Class to handle get requests for accessing ADD/DELETe BOOKS PAGE by ADMIN.
+//Class to handle get requests for accessing ADD/DELETE BOOKS PAGE by ADMIN.
 class ViewAddBook {
 
     public function get() {
