@@ -32,9 +32,9 @@
 
 ## DEPENDENCIES :
 
->It is built on the ToroPHP web framework and the templating engine used is twig version 3.0. It usses Composer verison 2.3.10, MySQL version 8.0.29 and nginx version 1.23.0. The version of PHP used is 7.4.3.
->This lms was developed on mac os Monterey but is expected to run on most of the lower updates as well.``
-
+>It is built on the ToroPHP web framework and the templating engine used is twig version 3.0.
+> It usses Composer verison 2.3.10, MySQL version 8.0.29 and nginx version 1.23.0. The version of PHP used is 7.4.3.
+>The lms was developed on mac os Monterey but is expected to run on most of the lower updates as well.``
 >You can refer its documentation on the following links: 1. ToroPHP - https://github.com/anandkunal/ToroPHP 2. Twig - https://twig.symfony.com/doc/
 
 ## DATABASE STRUCTURE :
