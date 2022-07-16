@@ -15,8 +15,8 @@ Toro::serve(array(
     "/user_issue" => "\Controller\UserIssue",
     "/signup" => "\Controller\SignUp",
 
-    "/ad_home" => "\Controller\AdHome",
-    "/ad_viewreq" => "\Controller\AdViewReq",
+    "/admin_home" => "\Controller\AdHome",
+    "/admin_viewreq" => "\Controller\AdViewReq",
     "/approve_issue" => "\Controller\ApproveIssue",
     "/deny_issue" => "\Controller\DenyIssue",
     "/approve_return" => "\Controller\ApproveReturn",

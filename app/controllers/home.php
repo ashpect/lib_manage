@@ -42,7 +42,7 @@ class AdHome{
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) {
             
             //Rendering Home page for admin
-            echo \View\Loader::make()->render("templates/ad_home.twig");
+            echo \View\Loader::make()->render("templates/admin_home.twig");
         }
         else
         {

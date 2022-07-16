@@ -10,7 +10,7 @@ class AdViewReq {
     public function get() {
         if (isset($_SESSION['username_ad']) && isset($_SESSION['password_ad'])) 
         {
-            echo \View\Loader::make()->render("templates/ad_viewreq.twig", array(
+            echo \View\Loader::make()->render("templates/admin_viewreq.twig", array(
                 "checkoutbooks" => \Model\AdminFunc::checkoutReq(),
                 "checkinbooks" => \Model\AdminFunc::checkinReq(),
             ));
