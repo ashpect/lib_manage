@@ -103,53 +103,6 @@ INSERT INTO `checkouts` VALUES (2,'Ashish',1,'2022-07-11 21:28:29','Ankur','2022
 UNLOCK TABLES;
 
 --
--- Table structure for table `posts`
---
-
-DROP TABLE IF EXISTS `posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `posts` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `caption` varchar(280) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `posts`
---
-
-LOCK TABLES `posts` WRITE;
-/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (5,'Ashish\r\n'),(6,'Hmmm\r\n'),(7,'OKOKOKO'),(8,'test'),(9,'okokokok'),(10,'okokokok'),(11,'okokokok');
-/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `signup`
---
-
-DROP TABLE IF EXISTS `signup`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `signup` (
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `signup`
---
-
-LOCK TABLES `signup` WRITE;
-/*!40000 ALTER TABLE `signup` DISABLE KEYS */;
-/*!40000 ALTER TABLE `signup` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -184,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-17 22:10:43
+-- Dump completed on 2022-07-17 22:16:53
