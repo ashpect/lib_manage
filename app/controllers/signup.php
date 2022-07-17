@@ -25,7 +25,13 @@ class SignUp {
             $password = password_hash($password, PASSWORD_DEFAULT);
             \Model\Verify::signup($username,$password);
             echo "SIGN-UP SUCCESSFULL";
-            echo \View\Loader::make()->render("templates/login.twig");
+            //Setting session variables for USER
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $password;
+
+            //Get method for User Homepage
+            $call = new \Controller\Home();
+            $call->get();
         }
 
     }
