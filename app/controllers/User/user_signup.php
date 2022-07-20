@@ -22,7 +22,7 @@ class UserSignUp
             echo "Passwords do not match. Please try again";
             echo \View\Loader::make()->render("templates/user_signup.twig");
         } else {
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            $password = hash("sha256", $password);
             \Model\Verify::userSignup($username, $password);
 
             echo '<script>alert("Sign-Up Succesful.Welcome to Lib-Manage.")</script>';

@@ -1,11 +1,18 @@
 {% extends "templates/nav.twig" %}
 
+{% block css %}
+  <link rel="stylesheet" href="/assets/styles/home.css" /> 
+{% endblock %}
+
+
 {% block body %}
 
 <div class="mainn">
 
-<div style=" align-items: center;padding-left: 28em;padding-bottom: 1em;"><h1>Your previous reads...?</h1></div>
-<div style="padding-left:33em;padding-bottom:4em">Keep incresing the stack >|<</div>
+  <div class = "flex1">
+  <div class="subflex1"><h1>Your previous reads...</h1></div>
+  <div class="subflex2">Keep incresing the stack</div>
+  </div>
 
 <table class="table table-bordered table-hover">
   <thead class="thead-dark">

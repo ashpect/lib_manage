@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 echo "----Starting the setup process-----"
 
@@ -64,4 +65,5 @@ else
 	php -S localhost:8000
 fi
 
-	
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT

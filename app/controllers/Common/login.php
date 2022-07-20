@@ -21,10 +21,10 @@ class Login
 
         //Flag checks for username and password FOR THE USER in db
         $flag = \Model\Verify::userVerify($username, $password);
-        if ($flag == null) {
+        if (sizeof($flag) == 0) {
             //If the login is not by user, flag2 checks for LOGIN BY ADMIN in db.
             $flag2 = \Model\Verify::adminVerify($username, $password);
-            if ($flag2 == null) {
+            if (sizeof($flag2) == 0) {
 
                 //If the login is invalid.
                 echo "You are not a user. Please signup";

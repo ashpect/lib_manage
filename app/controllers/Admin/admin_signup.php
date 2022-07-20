@@ -22,9 +22,11 @@ class AdminSignUp
             echo "Passwords do not match. Please try again";
             echo \View\Loader::make()->render("templates/admin_signup.twig");
         } else {
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            $password = hash("sha256", $password);
             \Model\Verify::adminSignup($username, $password);
-            echo "SIGN-UP SUCCESSFULL";
+
+            echo '<script>alert("Sign-Up Succesful.Welcome to Lib-Manage.")</script>';
+
             //Setting session variables for USER
             $_SESSION["username_ad"] = $username;
             $_SESSION["password_ad"] = $password;
