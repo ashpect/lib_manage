@@ -3,7 +3,7 @@
 require __DIR__ . "/../vendor/autoload.php";
 
 Toro::serve(array(
-    "/" => "\Controller\Home",
+    "/" => "\Controller\Login",
     "/logout" => "\Controller\Logout",
     "/post/:number" => "\Controller\Post",
     "/login" => "\Controller\Login",

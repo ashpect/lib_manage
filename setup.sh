@@ -1,5 +1,26 @@
 #! /bin/bash
 
+echo "----Starting the setup process-----"
+
+echo "Do you want have composer already installed ? (0 for yes / 1 for no)"
+read boolean
+if [ $boolean -eq 0 ];
+then 
+    echo "Ok..installing dependecies."
+elif [ $boolean -eq 1 ];
+then
+	echo "Installing Composer"
+    curl -s https://getcomposer.org/installer | php
+
+	echo '----Enter your system password(for sudo privilages)---- : '
+    sudo mv composer.phar /usr/local/bin/composer
+	composer install
+	composer update
+	composer dump-autoload
+fi
+
+echo "----Cheking for config file.----"
+
 if test -f "config/config.php"; 
 then
 	cd public
@@ -7,10 +28,6 @@ then
 	php -S localhost:8000
 else
 
-    curl -s https://getcomposer.org/installer | php
-    sudo mv composer.phar /usr/local/bin/composer
-	composer install
-	composer dump-autoload
     touch config/config.php
 
 	$DB_HOST 
@@ -46,3 +63,5 @@ else
 	cd public
 	php -S localhost:8000
 fi
+
+	
