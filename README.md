@@ -6,6 +6,8 @@
 
 1. Make sure you create a mysql database.
 
+2. Give setup.sh the privilages and run it.
+
 > chmod 755 setup.sh
 > ./setup.sh
 
