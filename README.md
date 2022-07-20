@@ -7,9 +7,10 @@
 1. Make sure you create a mysql database.
 
 2. Give setup.sh the privilages and run it.
-
-> chmod 755 setup.sh
-> ./setup.sh
+   ```console
+   > chmod 755 setup.sh
+   > ./setup.sh
+   ```
 
 OR manually :
 
@@ -17,29 +18,38 @@ OR manually :
 
 2. Install composer using:
 
+   ```console
    > curl -s https://getcomposer.org/installer | php
    > sudo mv composer.phar /usr/local/bin/composer
    > composer install
+   ```
 
 3. Install dependencies and dump-autoload:
 
+   ```console
    > composer install
    > composer update
    > composer dump-autoload
+   ```
 
 4. Copy config/sample.config.php as config/config.php and edit it accordingly:
 
+   ```console
    > cp config/sample.config.php config/config.php
-   >
    > # Edit the file using your mysql database credentials
+   ```
 
 5. Import schema present in schema/schema.sql in your database.
 
+   ```console
    > mysql -u $DB_USERNAME -p $DB_NAME < schema/schema.sql
+   ```
 
 6. Serve the public folder at any port (say 8000):
+   ```console
    > cd public
    > php -S localhost:8000
+   ```
 
 ## FEATURES :
 
