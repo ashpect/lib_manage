@@ -2,10 +2,12 @@
 
 namespace Controller;
 
-isset($_SESSION) ? '':session_start();
+isset($_SESSION) ? '' : session_start();
 
-class Logout {
-    public function get(){
+class Logout
+{
+    public function get()
+    {
         // echo "TESTING";
 
         // Unset all of the session variables.
@@ -15,9 +17,14 @@ class Logout {
         // Note: This will destroy the session, and not just the session data!
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
             );
         }
         // Finally, destroy the session.
@@ -25,6 +32,4 @@ class Logout {
 
         echo \View\Loader::make()->render("templates/logout.twig");
     }
-
 }
-

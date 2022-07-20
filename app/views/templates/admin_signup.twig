@@ -1,0 +1,24 @@
+{% extends "templates/base.twig" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/styles/login.css" /> 
+{% endblock %}
+
+{% block body %}
+
+<div class="hello"><h1>Hello, Welcome to Library Management System !</h1></div>
+
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" action="/admin_signup" method="POST">
+      <input type="text" name="username_ad" placeholder="Username"/>
+      <input type="password" name="password_ad" placeholder="Password"/>
+      <input type="password" name="confirmpassword" placeholder="Confirm password"/>
+      <button>Signup</button>
+      <p class="message">Already registered? <a href="../login">Login Instead</a></p>
+      <p class="message">Sign up as user instead? <a href="../user_signup">User Sign-Up</a></p>
+    </form>
+  </div>                          
+</div>
+
+{% endblock %}

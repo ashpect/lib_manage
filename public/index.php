@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__."/../vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
 
 Toro::serve(array(
     "/" => "\Controller\Home",
@@ -8,12 +8,13 @@ Toro::serve(array(
     "/post/:number" => "\Controller\Post",
     "/login" => "\Controller\Login",
     "/register" => "RegisterController",
-	"/home" => "\Controller\Home",
+    "/home" => "\Controller\Home",
     "/user_return" => "\Controller\UserReturn",
     "/issue_history" => "\Controller\IssueHistory",
     "/allbooks" => "\Controller\AllBooks",
     "/user_issue" => "\Controller\UserIssue",
-    "/signup" => "\Controller\SignUp",
+    "/user_signup" => "\Controller\UserSignUp",
+    "/admin_signup" => "\Controller\AdminSignUp",
 
     "/admin_home" => "\Controller\AdHome",
     "/admin_viewreq" => "\Controller\AdViewReq",
@@ -25,5 +26,3 @@ Toro::serve(array(
     "/add_book" => "\Controller\AddBook",
     "/delete_book" => "\Controller\DeleteBook"
 ));
-
-

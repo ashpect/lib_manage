@@ -74,6 +74,8 @@
     <td>
       <form action="/approve_return" method="POST">
         <input type="text" name="id" value= '{{ book.id }}' style="display:none;">
+        <input type="text" name="checkin_time" value= '{{ book.checkin_time }}' style="display:none;">
+        <input type="text" name="checkout_time" value= '{{ book.checkout_time }}' style="display:none;">
         <button type="submit" class="btn btn-outline-success" >Approve</button>
       </form>
     </td>

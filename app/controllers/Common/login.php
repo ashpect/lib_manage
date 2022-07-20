@@ -2,34 +2,34 @@
 
 namespace Controller;
 
-isset($_SESSION) ? '':session_start();
+isset($_SESSION) ? '' : session_start();
 
-class Login {
+class Login
+{
 
-    public function get() {
+    public function get()
+    {
         echo \View\Loader::make()->render("./templates/login.twig");
     }
 
-    public function post() {
+    public function post()
+    {
         //Setting global session variables
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $password = hash("sha256",$password);
-        
+        $password = hash("sha256", $password);
+
         //Flag checks for username and password FOR THE USER in db
-        $flag = \Model\Verify::userVerify($username,$password);
-        if($flag == null)
-        {
+        $flag = \Model\Verify::userVerify($username, $password);
+        if ($flag == null) {
             //If the login is not by user, flag2 checks for LOGIN BY ADMIN in db.
-            $flag2 = \Model\Verify::adminVerify($username,$password);
-            if($flag2 == null){
+            $flag2 = \Model\Verify::adminVerify($username, $password);
+            if ($flag2 == null) {
 
                 //If the login is invalid.
                 echo "You are not a user. Please signup";
                 echo \View\Loader::make()->render("templates/login.twig");
-            }
-            else
-            {
+            } else {
                 //Setting session variables for ADMIN
                 $_SESSION["username_ad"] = $username;
                 $_SESSION["password_ad"] = $password;
@@ -38,9 +38,7 @@ class Login {
                 $call = new \Controller\AdHome();
                 $call->get();
             }
-        }
-        else
-        {
+        } else {
             //Setting session variables for USER
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;

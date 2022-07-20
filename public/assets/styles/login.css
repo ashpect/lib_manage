@@ -3,10 +3,13 @@
 
 
 .hello {
+  display: flex;
+  flex-direction: column;
   font-family: 'Cormorant SC', serif;
   font-weight: 600;
   color: rgb(45,35,39);
   padding-top: 11em;
+  align-items: center;
 }
 .login-page {
   width: 600px;
