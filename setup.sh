@@ -8,6 +8,8 @@ read boolean
 if [ $boolean -eq 0 ];
 then 
     echo "Ok..installing dependecies."
+	composer update
+	composer dump-autoload
 elif [ $boolean -eq 1 ];
 then
 	echo "Installing Composer"
@@ -15,7 +17,7 @@ then
 
 	echo '----Enter your system password(for sudo privilages)---- : '
     sudo mv composer.phar /usr/local/bin/composer
-	composer install
+
 	composer update
 	composer dump-autoload
 fi
