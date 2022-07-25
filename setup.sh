@@ -38,16 +38,16 @@ else
 	$DB_PASSWORD
 
     echo 'Enter The Following Details : '
-	echo 'DB_HOST:'
+	echo 'DB_HOST: '
 	read DB_HOST
-	echo 'DB_PORT:'
+	echo 'DB_PORT: '
 	read DB_PORT 
-	echo 'DB_NAME:'
+	echo 'DB_NAME: '
 	read DB_NAME 
-	echo 'DB_USERNAME:'
+	echo 'DB_USERNAME: '
 	read DB_USERNAME
 	echo 'DB_PASSWORD:'
-	read DB_PASSWORD
+	read -s -p "DB_PASSWORD: "  DB_PASSWORD
 
 	
 	echo '<?php'>>config/config.php
